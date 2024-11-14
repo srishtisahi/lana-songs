@@ -54,7 +54,7 @@ export default function LanaDelReyQuiz() {
       setCurrentQuestion(currentQuestion + 1)
     } else {
       // Quiz completed, determine the result
-      const recommendedSong = getRecommendedSong(answers)
+      const recommendedSong = getRecommendedSong()
       setResult(recommendedSong)
     }
   }
@@ -65,7 +65,7 @@ export default function LanaDelReyQuiz() {
     }
   }
 
-  const getRecommendedSong = (userAnswers: string[]): string => {
+  const getRecommendedSong = (): string => {
     // This is a simplified recommendation algorithm
     // In a real scenario, you'd use more sophisticated matching or the Spotify API
     const moodIndex = Math.floor(Math.random() * lanaSongs.length)
